@@ -43,14 +43,13 @@ if (fault_items is not None):
             severity = str(fault.Severity)
             asset_external_id = str(fault.AssetExternalId)
             creation_timestamp = str(fault.CreationTimestamp)  
-            if (fault.IsActive):                     
-                insert_query = ("INSERT INTO fallas "
-                                "(falla_id, category_key, error_key, severity, asset_external_id, creation_timestamp) "
-                                "VALUES ('%s', %s, %s, %s, %s, %s)")
-                try:
-                    cursor.execute(insert_query, (fault_id, category_key, error_key, severity, asset_external_id, creation_timestamp))
-                except:
-                    print("No se pudo agregar falla " + fault_id)
+            insert_query = ("INSERT INTO fallas "
+                            "(fault_id, category_key, error_key, severity, asset_external_id, creation_timestamp) "
+                            "VALUES ('%s', %s, %s, %s, %s, %s)")
+	    try:
+                cursor.execute(insert_query, (fault_id, category_key, error_key, severity, asset_external_id, creation_timestamp))
+            except:
+                print("No se pudo agregar falla " + str(fault_id))
 
 cnx.commit()
 cursor.close()
