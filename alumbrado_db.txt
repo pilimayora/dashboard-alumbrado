@@ -1,0 +1,38 @@
+alumbrado
+|
+| 
+|--- fallas |--- fault_id | INT
+|			|
+|			|--- category_key | VARCHAR
+|			| 
+|			|--- error_key | VARCHAR
+|			|
+|			|--- severity | VARCHAR
+|			|
+|			|--- asset_external_id | VARCHAR
+|			|
+|			|--- creation_timestamp | DATETIME
+|
+|
+|--- luminarias |--- asset_external_id | VARCHAR
+|				|
+|				|--- lat | FLOAT
+|				|
+|				|--- long | FLOAT
+|				|
+|				|--- status | BOOLEAN
+|				| 
+|				|--- tiempo_sin_luz | INT
+|
+|
+|--- luminarias_delta |--- fault_id | INT
+					  |
+					  |--- asset_external_id | VARCHAR
+					  |
+					  |--- fecha_recorded | DATETIME
+					  |
+					  |--- tipo_falla | VARCHAR
+					  |
+					  |--- is_working | BOOLEAN
+					  |
+					  |--- last_updated | DATETIME
