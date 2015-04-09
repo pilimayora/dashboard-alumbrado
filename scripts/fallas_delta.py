@@ -97,7 +97,7 @@ for falla_activa in fallas_activas:
         update_query = ("UPDATE fallas_delta SET is_active = 0, last_updated = '%s' "
                         "WHERE fault_id = %s") % (hora_ahora, fault_id)
         try:
-            cursor6.execute(insert_query)
+            cursor6.execute(update_query)
         except mysql.connector.Error as err:
             print("Something went wrong: {}".format(err))
 
