@@ -5,7 +5,7 @@ import datetime
 
 try:
     cnx = mysql.connector.connect(user=config.mysql['user'], password=config.mysql['password'],
-                                  host='localhost',
+                                  host=config.mysql['host'],
                                   database='alumbrado')
     cursor1 = cnx.cursor()
     cursor2 = cnx.cursor(buffered=True)
